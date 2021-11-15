@@ -34,7 +34,7 @@ def get_index():
 @app.route("/get_categories")
 def get_categories():
     """
-    Testing
+    Function that gets all categories from mongodb
     """
     categories = list(mongo.db.categories.find())
     return render_template("categories.html", categories=categories)
