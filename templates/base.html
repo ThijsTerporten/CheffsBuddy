@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
-    crossorigin="anonymous" type="text/css" referrerpolicy="no-referrer" />
+        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+        crossorigin="anonymous" type="text/css" referrerpolicy="no-referrer" />
     <!-- Materialize cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
@@ -22,17 +22,28 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Cheff's Buddy</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <a href="{{ url_for('get_categories')}}" class="brand-logo">Cheff's Buddy</a>
+                <a href="#" data-target="sidebar-menu" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-
+                    <li><a href="{{ url_for('get_categories')}}">All Recipes</a></li>
+                    <li><a href="#">My Recipes</a></li>
+                    <li><a href="#">Create Recipes</a></li>
+                    <li><a href="#">Edit Recipes</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Log Out</a></li>
+                    <li><a href="#">Sign Up</a></li>
                 </ul>
             </div>
         </nav>
 
-        <ul class="sidenav" id="mobile-demo">
-
+        <ul class="sidenav" id="sidebar-menu">
+            <li><a href="{{ url_for('get_categories')}}">All Recipes</a></li>
+            <li><a href="#">My Recipes</a></li>
+            <li><a href="#">Create Recipes</a></li>
+            <li><a href="#">Edit Recipes</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Sign Up</a></li>
         </ul>
     </header>
     {% block content %}
