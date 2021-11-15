@@ -1,6 +1,10 @@
 {% extends "base.html" %}
-{% blockcontent %}
+{% block content %}
 
 <h2>test</h2>
 
+    {% for category in categories %}
+        {{ category.category_name}} <br>
+
+    {% endfor %}
 {% endblock %}
