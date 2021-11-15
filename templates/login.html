@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="center-align">Log In</h2>
+<p class="center-align">Start creating some more recipes or edit existing ones!</p>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user-plus prefix text-darken-4"></i>
+                <input id="username" type="text" class="validate" name="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="fas fa-user-lock prefix text-darken-4"></i>
+                <input id="password" type="password" class="validate" name="password" required>
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn-large col s12 m8 offset-m2 deep-purple darken-4">
+                Log In! <i class="fas fa-sign-in-alt"></i>
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
