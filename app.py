@@ -23,6 +23,14 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/get_index")
+def get_index():
+    """
+    Function to get the landing page
+    """
+    return render_template("index.html")
+
+
 @app.route("/get_categories")
 def get_categories():
     """
