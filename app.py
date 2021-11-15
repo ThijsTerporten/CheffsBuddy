@@ -40,6 +40,14 @@ def get_categories():
     return render_template("categories.html", categories=categories)
 
 
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    """
+    Function to register to website
+    """
+    
+    return render_template("signup.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
