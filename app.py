@@ -22,6 +22,7 @@ app.secret_key = os.environ.get(("SECRET_KEY"))
 mongo = PyMongo(app)
 
 
+@app.route("/")
 @app.route("/get_categories")
 def get_categories():
     """
