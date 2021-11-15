@@ -22,12 +22,13 @@ app.secret_key = os.environ.get(("SECRET_KEY"))
 mongo = PyMongo(app)
 
 
-@app.route("/")
-def hello():
+@app.route("/get_categories")
+def get_categories():
     """
     Testing
     """
-    return "Testing"
+    categories = list(mongo.db.categories.find())
+    return render_template("categories.html", categories=categories)
 
 
 if __name__ == "__main__":
