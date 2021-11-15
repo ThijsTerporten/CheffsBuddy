@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content%}
+
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel">
+            <h2 class="center-align">
+                {{ username }}'s Created Recipes <i class="fas fa-folder prefix"></i>  
+            </h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel">
+            <h2 class="center-align">
+                {{ username }}'s  liked Recipes <i class="fas fa-heart prefix"></i>  
+            </h2>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
