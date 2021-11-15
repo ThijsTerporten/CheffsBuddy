@@ -70,7 +70,7 @@ def signup():
     return render_template("signup.html")
 
 
-@app.route("/login", methods= ["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     """
     Function for loggin in using existing username
@@ -79,7 +79,6 @@ def login():
     Ensure Username matches user input
     """
     if request.method == "POST":
-        # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -88,6 +87,8 @@ def login():
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(
+                    url_for("my_recipes", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -96,6 +97,19 @@ def login():
             flash("Incorrect username and/or password")
             return redirect(url_for("login"))
     return render_template("login.html")
+
+
+@app.route("/my_recipes/<username>", methods=["GET", "POST"])
+def my_recipes(username):
+    """
+    Grab the session username from the database to see users recipes
+    """
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if session["user"]:
+        return render_template("my_recipes.html", username=username)
+
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
