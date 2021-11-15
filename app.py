@@ -114,6 +114,10 @@ def my_recipes(username):
 
 @app.route("/logout")
 def logout():
+    """
+    Logs the user out by removing the cookie
+    Redirects to login page
+    """
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
