@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col s12 center">
+        <h6 class="required-label">All fields must be completed before you submit this form</h6>
+    </div>
+</div>
+
+<div id="add-edit" class="row">
+    <div class="col s12 xl10 offset-xl1">
+        <div class="center">
+            <h5>General Information</h5>
+        </div>
+        <div class="row">
+            <div class="col s12 center">
+                <!-- Recipe Name-->
+                <div class="col s12 l8">
+                    <div class="input-field">
+                        <input id="name" name="name" type="text" class="validate" required pattern="" value="">
+                        <label for="name">Recipe Name</label>
+                        <span class="helper-text" data-error="Name must be between 5 and 26 chars"
+                            data-success="Passed"></span>
+                    </div>
+                </div>
+                <!--Category-->
+                <div class="col s12 l4">
+                    <div class="input-field">
+                        <select id="category" name="category" class="validate" required>
+                            <option value="" disabled selected>Category</option>
+                            <option value="" selected></option>
+                            <option value=""></option>
+                        </select>
+                        <label>Category</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 center">
+                <!-- Recipe image -->
+                <div class="col s12 l8">
+                    <div class="input-field">
+                        <input id="imageUrl" name="imageUrl" type="url" class="validate" pattern="https?://.+"
+                            minlength="12" required value="">
+                        <label for="imageUrl">Image Url</label>
+                        <a><i id="add-default-url" class="far fa-plus-square prefix tooltipped" data-position="left"
+                                data-tooltip="Click to add default Url"></i></a>
+                        <span class="helper-text"
+                            data-error="Url must begin with 'http(s)://' and be a minimum of 12 chars."
+                            data-success="Passed"></span>
+                    </div>
+                </div>
+                <div class="col s12 center">
+                    <!--Instructions-->
+                    <div class="col s12 l8">
+                        <div class="input-field">
+                            <textarea id="instructions" name="instructions" class="materialize-textarea validate"
+                                required minlength="5"></textarea>
+                            <label for="instructions">
+                                <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
+                                    data-tooltip="Separate each instruction into it's own sentence."></i>
+                            </label>
+                            <span class="helper-text" data-error="Instructions length must be at least 5 chars."
+                                data-success="Passed"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Ingredients-->
+            <div class="row">
+                <div class="center">
+                    <h5>Ingredients</h5>
+                </div>
+                <div class="col s12 center" id="">
+                    <div class="col s4 l2 measure_field">
+                        <div class="input-field">
+                            <input id="" name="" type="text" class="validate" required>
+                            <label for=""></label>
+                            <span class="helper-text" data-error="Cannot be empty." data-success="Passed"></span>
+                        </div>
+                    </div>
+                    <div class="col s8 l4 ingredient_field">
+                        <div class="input-field">
+                            <input id="" name="" type="text" class="validate" required>
+                            <label for=""></label>
+                            <span class="helper-text" data-error="Cannot be empty." data-success="Passed"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Add / Remove Ingredients-->
+            <div class="row left">
+                <a id="add_ingredient"><i class="far fa-plus-square fa-2x"></i></a>
+                <a id="remove_ingredient"><i class="far fa-minus-square fa-2x"></i></a>
+            </div>
+            <!--Submit & Cancel Buttons-->
+            <div class="center row">
+                <button class="btn btn--black" type="submit">Submit Recipe</button>
+                <a class="btn btn--white">Cancel</a>
+            </div>
+        </div>
+    </div>
