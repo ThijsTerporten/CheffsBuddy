@@ -14,27 +14,26 @@
                 <!-- Recipe Name-->
                 <div class="col s12 l8">
                     <div class="input-field">
-                        <input id="name" name="name" type="text" class="validate" required pattern="" value="">
-                        <label for="name">Recipe Name</label>
-                        <span class="helper-text" data-error="Name must be between 5 and 26 chars"
-                            data-success="Passed"></span>
+                        <input id="recipe_name" name="recipe_name" type="text" class="validate" minlength="5" maxlength="25">
+                        <label for="recipe_name">Recipe Name</label>
                     </div>
                 </div>
                 <!--Category-->
                 <div class="col s12 l4">
                     <div class="input-field">
-                        <select id="category" name="category" class="validate" required>
+                        <select id="category_name" name="category_name" class="validate" required>
                             <option value="" disabled selected>Category</option>
-                            <option value="" selected></option>
-                            <option value=""></option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name}}"> {{ category.category_name }}</option>
+                            {% endfor %}
                         </select>
-                        <label>Category</label>
+                        <label for="category_name">Category</label>
                     </div>
                 </div>
             </div>
             <div class="col s12 center">
                 <!-- Recipe image -->
-                <div class="col s12 l8">
+                <!-- <div class="col s12 l8">
                     <div class="input-field">
                         <input id="imageUrl" name="imageUrl" type="url" class="validate" pattern="https?://.+"
                             minlength="12" required value="">
@@ -45,26 +44,24 @@
                             data-error="Url must begin with 'http(s)://' and be a minimum of 12 chars."
                             data-success="Passed"></span>
                     </div>
-                </div>
+                </div> -->
                 <div class="col s12 center">
                     <!--Instructions-->
                     <div class="col s12 l8">
                         <div class="input-field">
-                            <textarea id="instructions" name="instructions" class="materialize-textarea validate"
-                                required minlength="5"></textarea>
+                            <textarea id="recipe_instructions" name="recipe_instructions" class="materialize-textarea validate"
+                                required minlength="5">Recipe Instructions</textarea>
                             <label for="instructions">
                                 <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
                                     data-tooltip="Separate each instruction into it's own sentence."></i>
                             </label>
-                            <span class="helper-text" data-error="Instructions length must be at least 5 chars."
-                                data-success="Passed"></span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!--Ingredients-->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="center">
                     <h5>Ingredients</h5>
                 </div>
@@ -84,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!--Add / Remove Ingredients-->
             <div class="row left">
