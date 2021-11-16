@@ -1,4 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>test</h2>
+
+
+<section class="page-container content-wrapper">
+    <div class="row center">
+        <h1>Add Recipe</h1>
+    </div>
+
+    <div class="row card-panel">
+        <form method="POST" action="{{ url_for('add_recipe') }}" class="col s12">
+            {% include 'helpers/recipe_form.html' %}
+        </form>
+    </div>
+</section>
+
+
 {% endblock %}
