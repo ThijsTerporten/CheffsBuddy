@@ -123,7 +123,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipe", methods=["POST", "GET"])
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     """
     Function to add a new recipe
@@ -131,7 +131,21 @@ def add_recipe():
     if not session.get("user"):
         flash("You must be logged in to create a new recipe")
         return redirect(url_for("login"))
-    return render_template("add_recipe.html")
+
+    if request.method == "POST":
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "category_name": request.form.get("category_name"),
+            "recipe_instructions": request.form.get("recipe_instructions"),
+            "created_by": session["user"]
+        }
+
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Succesfully created!")
+        return redirect(url_for("get_categories"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_recipe.html", categories=categories)
 
 
 if __name__ == "__main__":
