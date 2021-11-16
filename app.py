@@ -128,6 +128,9 @@ def add_recipe():
     """
     Function to add a new recipe
     """
+    if not session.get("user"):
+        flash("You must be logged in to create a new recipe")
+        return redirect(url_for("login"))
     return render_template("add_recipe.html")
 
 
