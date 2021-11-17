@@ -29,7 +29,7 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
                         <li><a href="{{ url_for('add_recipe')}}">Add Recipes</a></li>
-                        <li><a href="#">Edit Recipes</a></li>
+                        <li><a href="{{ url_for('my_recipes', username=session['user']) }}">Edit Recipes</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login')}}">Log In</a></li>
