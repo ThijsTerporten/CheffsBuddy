@@ -6,4 +6,11 @@
         {{ category.category_name}} <br>
 
     {% endfor %}
+    {% for recipe in recipes %}
+        {% if recipe.image|length %}
+            <img src="{{ recipe.image_url}}" alt="{{ recipe.image_alt }}">
+         {% else %}
+            <img src="../static/images/logo.png" alt="logo">
+        {% endif %}
+    {% endfor %}
 {% endblock %}
