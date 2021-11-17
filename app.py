@@ -163,29 +163,27 @@ def edit_recipe(recipe_id):
     if "user" in session:
         user = session["user"]
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        if recipe["created_by"] == user:
-            if request.method == "POST":
-                update_recipe = {
-                    "recipe_name": request.form.get("recipe_name"),
-                    "category_name": request.form.get("category_name"),
-                    "recipe_instructions":
-                        request.form.get("recipe_instructions"),
-                    "created_by": session["user"],
-                    "ingredients": request.form.get("ingredients"),
-                    "image_url": request.form.get("image_url"),
-                    "description": request.form.get("description")
-                }
-                mongo.db.recipes.update(
-                    {"_id": ObjectId(recipe_id)}, update_recipe
-                )
-                flash("Recipe Succesfully Updated!")
-            else:
-                flash("You are not Authorised to do this! Please login")
-                return redirect(url_for("login"))
-        else:
-            flash("You are not Authorised to do this! Please login")
-            return redirect(url_for("login"))
-        return render_template("edit_recipes.html", recipe=recipe)
+        if recipe["created_by"]:
+            if recipe["created_by"] == user:
+                if request.method == "POST":
+                    update = {
+                        "recipe_name": request.form.get("recipe_name"),
+                        "category_name": request.form.get("category_name"),
+                        "recipe_instructions": request.form.get(
+                            "recipe_instructions"),
+                        "created_by": session["user"],
+                        "ingredients": request.form.get("ingredients"),
+                        "image_url": request.form.get("image_url"),
+                        "description": request.form.get("description")
+                    }
+                    mongo.db.recipes.update(
+                        {"_id": ObjectId(recipe_id)}, update)
+                    flash("Recipe Succesfully Updated")
+                    return render_template("my_recipes.html")
+
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template(
+            "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 if __name__ == "__main__":
