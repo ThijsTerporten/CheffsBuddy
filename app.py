@@ -122,6 +122,15 @@ def my_recipes(username):
         recipes=recipes)
 
 
+@app.route("/full_recipe/<recipe_id>")
+def full_recipe(recipe_id):
+    """
+    Shows the full recipe from the database
+    """
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("full_recipe.html", recipe=recipe)
+
+
 @app.route("/logout")
 def logout():
     """
