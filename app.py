@@ -150,6 +150,38 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+@app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    """
+    Allows user to edit their created recipe
+    """
+    if "user" in session:
+        user = session["user"]
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        if recipe["created_by"] == user:
+            if request.method == "POST":
+                update_recipe = {
+                    "recipe_name": request.form.get("recipe_name"),
+                    "category_name": request.form.get("category_name"),
+                    "recipe_instructions":
+                        request.form.get("recipe_instructions"),
+                    "created_by": session["user"],
+                    "ingredients": request.form.get("ingredients"),
+                    "image_url": request.form.get("image_url")
+                }
+                mongo.db.recipes.update(
+                    {"_id": ObjectId(recipe_id)}, update_recipe
+                )
+                flash("Recipe Succesfully Updated!")
+            else:
+                flash("You are not Authorised to do this! Please login")
+                return redirect(url_for("login"))
+        else:
+            flash("You are not Authorised to do this! Please login")
+            return redirect(url_for("login"))
+        return render_template("edit_recipes.html", recipe=recipe)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
