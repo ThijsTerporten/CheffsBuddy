@@ -33,25 +33,21 @@
             </div>
             <div class="col s12 center">
                 <!-- Recipe image -->
-                <!-- <div class="col s12 l8">
+                <div class="col s12 l8">
                     <div class="input-field">
-                        <input id="imageUrl" name="imageUrl" type="url" class="validate" pattern="https?://.+"
+                        <input id="image_url" name="image_url" type="url" class="validate" pattern="https?://.+"
                             minlength="12" required value="">
-                        <label for="imageUrl">Image Url</label>
-                        <a><i id="add-default-url" class="far fa-plus-square prefix tooltipped" data-position="left"
-                                data-tooltip="Click to add default Url"></i></a>
-                        <span class="helper-text"
-                            data-error="Url must begin with 'http(s)://' and be a minimum of 12 chars."
-                            data-success="Passed"></span>
+                        <label for="image_url">Image Url</label>
                     </div>
-                </div> -->
+                </div>
                 <div class="col s12 center">
                     <!--Instructions-->
                     <div class="col s12 l8">
                         <div class="input-field">
                             <textarea id="recipe_instructions" name="recipe_instructions" class="materialize-textarea validate"
-                                required minlength="5">Recipe Instructions</textarea>
+                                required minlength="5"></textarea>
                             <label for="instructions">
+                                Recipe Instructions
                                 <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
                                     data-tooltip="Separate each instruction into it's own sentence."></i>
                             </label>
@@ -64,8 +60,9 @@
                 <div class="col s12 l8">
                     <div class="input-field">
                         <textarea id="ingredients" name="ingredients" class="materialize-textarea validate"
-                            required minlength="5">Ingredients</textarea>
+                            required minlength="5"></textarea>
                         <label for="ingredients">
+                            Ingredients
                             <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
                                 data-tooltip="Separate each ingredient into it's own sentence."></i>
                         </label>
