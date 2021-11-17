@@ -70,6 +70,7 @@ def signup():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Succesfull")
+        return redirect(url_for("get_categories"))
 
     return render_template("signup.html")
 
@@ -108,12 +109,17 @@ def my_recipes(username):
     """
     Grab the session username from the database to see users recipes
     """
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    if session["user"]:
-        return render_template("my_recipes.html", username=username)
-
-    return redirect(url_for("login"))
+    username = session["user"]
+    if username == session["user"]:
+        recipes = list(mongo.db.recipes.find(
+            {"created_by": session["user"]}))
+    else:
+        flash("You weren't supposed to be here!")
+        return redirect(url_for("get_categories"))
+    return render_template(
+        "my_recipes.html",
+        username=username,
+        recipes=recipes)
 
 
 @app.route("/logout")
@@ -179,7 +185,7 @@ def edit_recipe(recipe_id):
                     mongo.db.recipes.update(
                         {"_id": ObjectId(recipe_id)}, update)
                     flash("Recipe Succesfully Updated")
-                    return render_template("categories.html")
+                    return redirect(url_for("get_categories"))
             else:
                 flash("Whoops you are not this recipes creator")
                 return redirect(url_for("get_categories"))
@@ -194,9 +200,17 @@ def delete_recipe(recipe_id):
     """
     Remove a recipe from the database
     """
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe Succesfully Removed")
-    return redirect(url_for("get_categories"))
+    if "user" in session:
+        user = session["user"]
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        if recipe["created_by"]:
+            if recipe["created_by"] == user:
+                mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+                flash("Recipe Succesfully Removed")
+                return redirect(url_for("get_categories"))
+        else:
+            flash("You didnt create this recipe!")
+            return redirect(url_for("categories.html"))
 
 
 if __name__ == "__main__":
