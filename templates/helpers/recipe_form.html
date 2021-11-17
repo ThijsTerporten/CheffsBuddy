@@ -70,7 +70,22 @@
                 </div>
             </div>
         </div>
-
+        <div class="col s12 center">
+            <!-- Add a small description for the dish -->
+            <div class="col s12 l8">
+                <div class="input-field">
+                    <textarea id="description" name="description" class="materialize-textarea validate"
+                        required minlength="5" maxlength="50"></textarea>
+                    <label for="description">
+                        Describe the recipe
+                        <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
+                            data-tooltip="Separate each ingredient into it's own sentence."></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 center">
             <!--Submit & Cancel Buttons-->
             <div class="center row">
                 <button class="btn btn--black" type="submit">Submit Recipe</button>
