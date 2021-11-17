@@ -37,7 +37,11 @@ def get_categories():
     Function that gets all categories from mongodb
     """
     categories = list(mongo.db.categories.find())
-    return render_template("categories.html", categories=categories)
+    recipes = list(mongo.db.recipes.find())
+    return render_template(
+                            "categories.html",
+                            categories=categories,
+                            recipes=recipes)
 
 
 @app.route("/signup", methods=["GET", "POST"])
