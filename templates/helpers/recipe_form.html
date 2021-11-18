@@ -49,15 +49,12 @@
     <div class="row center-align">
         <div class="col s12 center-align">
             <!--Instructions-->
-            <div class="col s12 l8">
+            <div class="col s12 l8" id="addInstruction">
                 <div class="input-field">
-                    <textarea id="recipe_instructions" name="recipe_instructions" class="materialize-textarea validate"
-                        required minlength="5"></textarea>
-                    <label for="instructions">
-                        Recipe Instructions
-                        <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
-                            data-tooltip="Separate each instruction into it's own sentence."></i>
+                    <label for="instructions">Instructions
                     </label>
+                    <input type="text" name="instructions" required class="materialize-textarea validate">
+                    <a href="#" role="button" id="add-dir-btn"><i class="fas fa-plus right"></i></a>
                 </div>
             </div>
         </div>
@@ -66,14 +63,10 @@
     <div class="row center-align">
         <div class="col s12 center">
             <!--Ingredients-->
-            <div class="col s12 l8">
+            <div class="col s12 l8" id="addIngredient">
                 <div class="input-field">
-                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required
-                        minlength="5"></textarea>
                     <label for="ingredients">
                         Ingredients
-                        <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
-                            data-tooltip="Separate each ingredient into it's own sentence."></i>
                     </label>
                 </div>
             </div>
