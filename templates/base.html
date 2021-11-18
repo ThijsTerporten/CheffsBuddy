@@ -20,9 +20,11 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="navbar-fixed">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_categories')}}" class="brand-logo">Cheff's Buddy</a>
+                <a href="{{ url_for('get_categories')}}" class="brand-logo">
+                    <img src="../static/images/logo.png" alt="logo" class="circle responsive-img valign-left" width="60" height="60"> 
+                    </a>
                 <a href="#" data-target="sidebar-menu" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_categories')}}">All Recipes</a></li>
@@ -44,7 +46,7 @@
             {% if session.user %}
                 <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe')}}">Add Recipes</a></li>
-                <li><a href="#">Edit Recipes</a></li>
+                <li><a href="{{ url_for('my_recipes', username=session['user']) }}">Edit Recipes</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login')}}">Log In</a></li>
