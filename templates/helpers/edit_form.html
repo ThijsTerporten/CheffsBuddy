@@ -50,36 +50,39 @@
             </div>
         </div>
     </div>
+    <!--Instructions-->
     <div class="row center-align">
-        <div class="col s12 center-align">
-            <!--Instructions-->
-            <div class="col s12 l8">
+        <div class="col s12 center">
+            <div class="col s12 l8" id="addInstruction">
+                {% for instruction in recipe.recipe_instructions %}
                 <div class="input-field">
-                    <textarea id="recipe_instructions" name="recipe_instructions" class="materialize-textarea validate"
-                        required minlength="5">{{- recipe.recipe_instructions -}}</textarea>
-                    <label for="instructions">
-                        Recipe Instructions
-                        <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
-                            data-tooltip="Separate each instruction into it's own sentence."></i>
-                    </label>
+                    <label for="recipe_instructions">Instructions</label>
+                    <input type="text" name="recipe_instructions" required class="validate" value="{{ instruction }}">
+                    <a href="#" role="button" id="add-dir-btn"><i class="fas fa-plus right"></i></a>
+                    {% if loop.index != 1 %}
+                    <button class="btn-remove right" type="button"><i class="fas fa-trash-alt"></i></button>
+                    {% endif %}
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-
+    <!--Ingredients-->
     <div class="row center-align">
         <div class="col s12 center">
-            <!--Ingredients-->
-            <div class="col s12 l8">
+            <div class="col s12 l8" id="addIngredient">
+                {% for ingredient in recipe.ingredients %}
                 <div class="input-field">
-                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required
-                        minlength="5">{{- recipe.ingredients -}}</textarea>
                     <label for="ingredients">
                         Ingredients
-                        <i class="fas fa-info-circle fa-sm tooltipped" data-position="right"
-                            data-tooltip="Separate each ingredient into it's own sentence."></i>
                     </label>
+                    <input type="text" name="ingredients" required class="validate" value="{{ ingredient }}">
+                    <a href="#" role="button" id="add-ingr-btn"><i class="fas fa-plus right"></i></a>
+                    {% if loop.index != 1 %}
+                    <button class="btn-remove right" type="button"><i class="fas fa-trash-alt"></i></button>
+                    {% endif %}
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
