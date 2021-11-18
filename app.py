@@ -161,10 +161,9 @@ def add_recipe():
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
-            "recipe_instructions": request.form.get(
-                "recipe_instructions").splitlines(),
+            "recipe_instructions": request.form.getlist("recipe_instructions"),
             "created_by": session["user"],
-            "ingredients": request.form.get("ingredients").splitlines(),
+            "ingredients": request.form.getlist("ingredients"),
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description")
         }
@@ -191,11 +190,10 @@ def edit_recipe(recipe_id):
                     update = {
                         "recipe_name": request.form.get("recipe_name"),
                         "category_name": request.form.get("category_name"),
-                        "recipe_instructions": request.form.get(
-                            "recipe_instructions").splitlines(),
+                        "recipe_instructions": request.form.getlist(
+                            "recipe_instructions"),
                         "created_by": session["user"],
-                        "ingredients": request.form.get(
-                            "ingredients").splitlines(),
+                        "ingredients": request.form.getlist("ingredients"),
                         "image_url": request.form.get("image_url"),
                         "description": request.form.get("description")
                     }
@@ -228,6 +226,16 @@ def delete_recipe(recipe_id):
         else:
             flash("You didnt create this recipe!")
             return redirect(url_for("categories.html"))
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """
+    Function to search for recipes in the database
+    """
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("categories.html", recipes=recipes)
 
 
 if __name__ == "__main__":
