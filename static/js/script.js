@@ -28,7 +28,7 @@ let maxDirections = 40;
 
 $("#add-ingr-btn").click(function(e) {
   e.preventDefault();
-  $("addIngredient").append(
+  $("#addIngredient").append(
     `
     <div class="input-field">
     <label for="ingredients">
@@ -47,3 +47,9 @@ $("#addInstruction").on("click", ".btn-remove", function(e){
   $(this).parent("div").remove();
   directions--;
 });
+
+$("#addIngredient").on("click", ".btn-remove", function(e) {
+  e.preventDefault(e);
+  $(this).parent("div").remove();
+  ingredients--;
+})
