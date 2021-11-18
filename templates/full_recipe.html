@@ -1,10 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row">
-    <div class="col s12">
-        <h1>{{ recipe.recipe_name }}</h1>
+<div class="container">
+    <div class="row center-align card-panel">
+        <div class="col s12">
+            <h1>{{ recipe.recipe_name }}</h1>
+        </div>
     </div>
 </div>
+<div class="row card-panel">
+    <div class="col s12 l8">
+        <div class="card-image">
+            {% if recipe.image_url|length %}
+            <img src="{{ recipe.image_url }}" class="responsive-img" alt="{{ recipe.image_url }}">
+            {% else %}
+            <img src="../static/images/logo.png" alt="">
+            {% endif %}
+        </div>
+    </div>
+    <div class="col s12 l4">
+        <h2 class="center-align">Ingredients</h2>
+        <div class="divider"></div>
+        <ul>
+            {% for ingredient in recipe.ingredients %}
+            <li>
+                {{ ingredient[0]|upper }} {{ ingredient[1:] }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row card-panel">
+    <h2 class="center-align">Instructions</h2>
+    <div class="divider"></div>
+    <ol>
+        {% for step in recipe.recipe_instructions -%}
+        <li>
+            {{- step[0]|upper -}} {{- step[1:] -}}
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+
 
 {% endblock %}
