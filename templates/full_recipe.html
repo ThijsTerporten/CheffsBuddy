@@ -24,7 +24,7 @@
         <ul>
             {% for ingredient in recipe.ingredients %}
             <li>
-                {{ ingredient[0]|upper -}} {{ ingredient[1:] }}
+                {{- ingredient -}} {{ ingredient[1:] }}
             </li>
             {% endfor %}
         </ul>
@@ -36,7 +36,7 @@
     <ol>
         {% for step in recipe.recipe_instructions -%}
         <li>
-            {{- step[0]|upper -}} {{- step[1:] -}}
+            {{- step -}} {{- step[1:] -}}
         </li>
         {% endfor %}
     </ol>
