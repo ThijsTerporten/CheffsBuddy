@@ -128,6 +128,12 @@ def full_recipe(recipe_id):
     Shows the full recipe from the database
     """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    try:
+        category_name = mongo.db.categories.find_one(
+            {"_id": ObjectId(recipe["category_id"])})["category_name"]
+        recipe["category_id"] = category_name
+    except BaseException:
+        recipe["category_id"] = "undefined"
     return render_template("full_recipe.html", recipe=recipe)
 
 
