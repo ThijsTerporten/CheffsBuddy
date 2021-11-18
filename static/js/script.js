@@ -16,10 +16,10 @@ let maxDirections = 40;
     $("#addInstruction").append(
       `
       <div class="input-field">
-          <label for="instructions">
+          <label for="recipe_instructions">
               Recipe Instructions
           </label>
-          <input type="text" name="instructions" required>
+          <input type="text" name="recipe_instructions" required>
           <button class="btn-remove right" type="button"><i class="fas fa-trash-alt"></i></button>
       </div>`);
       directions++;
