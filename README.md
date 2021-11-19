@@ -330,6 +330,12 @@ This tells Heroku how to run our project:
 * From the cluster page click on collections button.
 * Click on Create Database, provide the database name and one initial collection name. 
   - This name will be used in your MONGO_URI and MONGO_DBNAME environment variables.
+* Create more collections by clicking the Create Collection button.
+* To manually create a document, click on the Collection followed by Insert Document.
+
+3. Fork or Clone THe Github Repository:
+
+* 
 
 
 # Credits: 
