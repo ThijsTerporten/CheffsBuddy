@@ -335,7 +335,41 @@ This tells Heroku how to run our project:
 
 3. Fork or Clone THe Github Repository:
 
-* 
+## Forking:
+
+* Log in to GitHub.  
+* Navigate to the main page of the GitHub Repository that you want to fork.  
+* At the top right of the Repository just below your profile picture, locate the "Fork" Button.  
+* You should now have a copy of the original repository in your GitHub account.  
+* Changes made to the forked repository can be merged with the original repository via a pull request. 
+
+## Cloning:
+
+* Go to repository.
+* Click on the button "code".
+* Select the "HTTPS" option.
+* Copy the URL presented.
+* Open your Terminal.
+* Create a directory for storing this repository.
+* Type "git clone" and paste the URL in that you previously copied.
+* Press enter to create local clone repository.
+
+4. Set local environment variables and install dependancies:
+
+* Create a .gitignore file and add env.py to it
+* Create an env.py file to hold your sensitive information.
+* Within the env.py file:
+    - import os
+    - os.environ.setdefault("IP", "0.0.0.0")
+    - os.environ.setdefault("PORT", "5000")
+    - os.environ.setdefault("SECRET_KEY", <your_secret_key")
+    - os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority")
+    - os.environ.setdefault("MONGO_DBNAME", "<database_name")
+* Install all dependencies listed from the requirements.txt file.
+  - Type in terminal: pip3 install -r requirements.txt  
+
+
+
 
 
 # Credits: 
