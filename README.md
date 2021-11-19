@@ -112,11 +112,23 @@ All images are taken from either:
 
 ## Current Features: 
 
+- A user is able to sign up to the website.
+- A user is able to login/logout of the website.
+- A user is able to create their own recipes.
+- A user is able to edit their created recipes.
+- A user is able to delete their own recipes.
+- A user is able to look at recipes created by other people.
+- A user is able to see a full description of the recipe.
+- A user is able to see all recipes they created on their profile page under my recipes.
+- A user is able to search for recipes based on the ingredients used or recipe name.
 
 
 ## Future Features: 
 
-
+- A user is able to like a recipe which is then stored in their profile page.
+- A user is able to comment on recipes created by other people.
+- A user is able to have a clear overview of recipes in tabs of each category.
+- Pagination to be added so the screen doesn't get too long when a lot of recipes are in the database.
 
 # Technologies used:
 
@@ -130,9 +142,10 @@ All images are taken from either:
 ## Libraries:
 
 - JQuery: for easier and faster javascript and DOM manipulation.
-- Matrialize
-- Flask
-- MongoDb
+- Matrialize: used for creating a responsive design.
+- Flask: micro framework for Python code.
+- MongoDb: Used as the database where all data is stored.
+- Jinja: for displaying data on the screen.
 
 ## Other programs used:
 
@@ -153,7 +166,7 @@ All images are taken from either:
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code
 > Warns user that backdrop-fliter isn't a property. Explained in bug section further.
 - [W3 HTML Validator](https://validator.w3.org/) to validate HTML code
-> All HTML-code passes the test.
+> All HTML-code passes the test. However multiple warnings were given for using the Jinja Templating Language.
 
 # Testing: 
 
