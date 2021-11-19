@@ -6,14 +6,21 @@
 </div>
 <div class="row">
     <div class="col s12 m12 l8">
-        <img class="hero-img responsive-img" src="../static/images/cooking.jpg"></img>
+        <div class="row bg-img--banner breakfast"></div>
+        <div class="row bg-img--banner lunch"></div>
+        <div class="row bg-img--banner dinner"></div>
+        <div class="row bg-img--banner dessert"></div>
     </div>
+
     <div class="col s12 m12 l4">
-        <section class="card-panel">
+        <section>
             <h2 class="flow-text center-align">Cheff's Buddy</h2>
+            <div class="divider"></div>
             <img src="../static/images/logo.png" alt="logo" class="responsive-img">
-            <p class="flow-text">We at cheff's buddy provide you with a quick and easy way to acces your favorite recipes</p>
-            <p class="flow-text">Either <a href="{{ url_for('get_categories')}}">continue as a guest user</a> or sign up, login and create and like your favorite recipes</p>
+            <p class="flow-text">We at cheff's buddy provide you with a quick and easy way to acces your favorite
+                recipes</p>
+            <p class="flow-text">Either <a href="{{ url_for('get_categories')}}">continue as a guest user</a> or sign
+                up, login and create and like your favorite recipes</p>
             <a href="{{ url_for('login')}}" class="btn green center-align">Login</a>
             <a href="{{ url_for('signup')}}" class="btn blue center-align">SignUp</a>
         </section>

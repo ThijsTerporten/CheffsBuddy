@@ -11,11 +11,31 @@ nav {
     background-color: #000500;
 }
 
-.hero-img {
-    max-height: 100vh;
-    width: 100%;
+.bg-img--banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 25vh;
+    margin-bottom: 5px;
 }
 
+.breakfast {
+    background-image: url("../images/breakfast.jpg");
+    background-position: 50% 25%;
+}
+
+.lunch {
+    background-image: url("../images/lunch.jpg");
+}
+
+.dinner {
+    background-image: url("../images/dinner.jpg");
+    background-position: 20% 66%;
+}
+
+.dessert {
+    background-image: url("../images/dessert.jpg");
+}
 
 .background-decoration {
     background-image: url("../images/banner.png");
