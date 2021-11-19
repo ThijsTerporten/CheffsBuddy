@@ -230,8 +230,17 @@ on the all recipes page.
 # BUGS and other issues:
 
 
-
 # Existing Bugs
+
+### Link to full recipe fading away:
+
+When viewing recipes on screens between 994 and 1800px the link to the full recipe would be swallowed by the two buttons beside it.
+This was fixed by swapping around some classes on the respective column from the card that the recipe resides in.
+
+### Liking system not being implemented:
+
+While working on this project I was trying to implement a liking system to excite users to create good recipes so they would get upvoted.
+However I realised to late in development that I needed to add another data-attribute to the user collection. Which is in place as of now for new registering users.
 
 
 
