@@ -41,4 +41,15 @@ li {
 }
 
 
-/* panel styling */
+/* panel styling in my recipes page*/
+
+
+.created-recipes {
+    background-color: #000500;
+    color: #FFFBFF;
+    border-radius: 5px;
+}
+
+.liked-recipes {
+    color: pink;
+}
