@@ -184,26 +184,25 @@ def edit_recipe(recipe_id):
     if "user" in session:
         user = session["user"]
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        if recipe["created_by"]:
-            if recipe["created_by"] == user:
-                if request.method == "POST":
-                    update = {
-                        "recipe_name": request.form.get("recipe_name"),
-                        "category_name": request.form.get("category_name"),
-                        "recipe_instructions": request.form.getlist(
-                            "recipe_instructions"),
-                        "created_by": session["user"],
-                        "ingredients": request.form.getlist("ingredients"),
-                        "image_url": request.form.get("image_url"),
-                        "description": request.form.get("description")
-                    }
-                    mongo.db.recipes.update(
-                        {"_id": ObjectId(recipe_id)}, update)
-                    flash("Recipe Succesfully Updated")
-                    return redirect(url_for("get_categories"))
-            else:
-                flash("Whoops you are not this recipes creator")
+        if recipe["created_by"] == user:
+            if request.method == "POST":
+                update = {
+                    "recipe_name": request.form.get("recipe_name"),
+                    "category_name": request.form.get("category_name"),
+                    "recipe_instructions": request.form.getlist(
+                        "recipe_instructions"),
+                    "created_by": session["user"],
+                    "ingredients": request.form.getlist("ingredients"),
+                    "image_url": request.form.get("image_url"),
+                    "description": request.form.get("description")
+                }
+                mongo.db.recipes.update(
+                    {"_id": ObjectId(recipe_id)}, update)
+                flash("Recipe Succesfully Updated")
                 return redirect(url_for("get_categories"))
+        else:
+            flash("Whoops you are not this recipes creator")
+            return redirect(url_for("get_categories"))
 
         categories = mongo.db.categories.find().sort("category_name", 1)
         return render_template(
@@ -218,14 +217,20 @@ def delete_recipe(recipe_id):
     if "user" in session:
         user = session["user"]
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        if recipe["created_by"]:
-            if recipe["created_by"] == user:
-                mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-                flash("Recipe Succesfully Removed")
-                return redirect(url_for("get_categories"))
+        if recipe["created_by"] == user:
+            mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+            flash("Recipe Succesfully Removed")
+            return redirect(url_for("get_categories"))
         else:
             flash("You didnt create this recipe!")
             return redirect(url_for("categories.html"))
+
+
+@app.route("/like_recipe/<recipe_id>")
+def like_recipe():
+    """
+    Function for liking a recipe
+    """
 
 
 @app.route("/search", methods=["GET", "POST"])
