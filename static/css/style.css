@@ -24,10 +24,7 @@ nav {
     background-position: center;
 }
 
-.row {
-    margin-bottom: 5px;
-}
-
+ /* Font styling */
 h1 {
     font-weight: 800;
 }
@@ -38,3 +35,10 @@ li {
     font-weight: 700;
 }
 
+.flash-message {
+    font-weight: 800;
+    color: brown;
+}
+
+
+/* panel styling */
