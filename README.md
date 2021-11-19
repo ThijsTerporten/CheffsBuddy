@@ -52,6 +52,15 @@ The project has been deployed on Heroku [here](https://cheffs-buddy.herokuapp.co
 
 ## Structure: 
 
+The website is layed out in the following way:
+
+- User arrives on the landing page
+> Option to browse website as a guest or login/signup
+- After user is logged in he/she can start creating recipes. Logging in
+or signing up takes user immediatly to their profile.
+> A user can edit their own recipes, but only look at recipes created by other people.
+- If user chooses to explore as a guest he/she can only look at other people's recipes.
+> full recipes are still available.
 
 ## Wireframes: 
 
