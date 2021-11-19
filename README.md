@@ -62,9 +62,17 @@ or signing up takes user immediatly to their profile.
 - If user chooses to explore as a guest he/she can only look at other people's recipes.
 > full recipes are still available.
 
+
+## Skeleton:
+
+### Design changes:
+
+I tried to stay as close to the original wireframes as possible.
+However design alterations were quite minor.
+
 ## Wireframes: 
 
-Wireframes for the layout of the project can be found here: [here]()
+Wireframes for the layout of the project can be found here: [here](static/images/wireframe/Milestone3.png)
 
 
 ### Wireframing data:
