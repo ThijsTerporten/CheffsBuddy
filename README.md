@@ -190,42 +190,42 @@ Most testing was done during development:
 ### As owner of this app I would like:
 
 - to provide users with an intuitive experience while browsing the app.
->
+> The App is responsive throughout the entire application, barring small hickups on really small screens and screens inbetween M-L.
 - to allow users to register to the application.
->
+> Registering is easy and intuitive, extra security features will be implemented in the future.
 - to allow users to edit their own recipes.
->
+> Editing is easy and intuitive by either finding the recipe in the my_recipe collection or clicking on the edit button on the recipe card.
 - to provide an incentive to create good recipes.
->
+> The liking system is not in place as of yet.
 
 
 ### As a new/unregistered user I would like to:
 
 - Be able to explore the recipes on the site.
->
+> From the landing screen you are able to directly browse the website by clicking the link or clicking the logo.
 - Be able to view a full description of the recipe.
->
+> Click on the link of each respective card to take the user to the full recipe page.
 - Navigate the app intuitively. 
->
+> Navigating the app is fluent on whichever device the user is viewing it on.
 - Easily understand what this website is about.
->
+> On the landing screen it showcase nice screenshots of dishes, further browsing the website it showcases every created recipe in a nice card with a screenshot
+showcasing the dish.
 - Search for recipes based on products used.
->
+> In the search bar on the homepage a user can type in ingredients they would like to use and it returns a recipe based on that.
 
 ### As a registered user I would like to:
 
 - Be able to login easily
->
+> Click login
 - Be able to save my favorite recipes.
->
+> Not implemented as of yet, the liking was harder to implement than expected.
 - Be able to create a recipe.
->
+> In the add recipe page a user is able to fill in a form that sends the recipe to the database and then renders it in their created recipes page and 
+on the all recipes page.
 - Be able to like and unlike recipes.
->
+> not implemented as of yet
 - Sort recipes by category
->
-
-
+> not implemented as of yet however a search bar was added to search based on ingredients used in recipes.
 
 # BUGS and other issues:
 
