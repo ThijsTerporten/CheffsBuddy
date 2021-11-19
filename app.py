@@ -234,8 +234,13 @@ def search():
     Function to search for recipes in the database
     """
     query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("categories.html", recipes=recipes)
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}).sort(
+        "category_name", 1))
+    return render_template(
+        "categories.html",
+        recipes=recipes,
+        categories=categories)
 
 
 if __name__ == "__main__":
