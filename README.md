@@ -1,6 +1,9 @@
 # Project summary:
 
- [here]().
+This is a simple cookbook app that will help users decide on what new recipe they would like to try out.
+This project was designed to showcase understanding of Python making use of the Flask Framework in combination with Jinja and MongoDb.
+The app was designed to be easily expanded upon in future releases.
+The project has been deployed on Heroku [here](https://cheffs-buddy.herokuapp.com/).
 
 ## Showcase 
 
