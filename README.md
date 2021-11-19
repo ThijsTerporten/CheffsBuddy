@@ -69,8 +69,21 @@ Wireframes for the layout of the project can be found here: [here]()
 
 ### Wireframing data:
 
+Data is storder in 3 different ways:
+1. Categories: The original plan was to have 4 dropdowns to insert the recipes in based on the category they belong to.
+2. Recipes: These consist out of:
+- Recipe_name
+- Category_name
+- recipe_instructions (this is an array)
+- created_by
+- ingredients (this is an array)
+- image_url
+- description
 
 ## Surface: 
+
+
+
 
 ### Fonts: 
 
