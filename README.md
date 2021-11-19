@@ -312,7 +312,24 @@ This tells Heroku how to run our project:
 
 ## To use this project follow the following steps:
 
+1. Create a database on MongoDb
 
+* Login
+* Create a cluster by choosing the Shared Cluster.
+ - Select a cloud provider and select the region closest to you.
+* Select a cluster tier, choose the M0 Tier (Free forever).
+* Click on cluster name and choose whatever name you like.
+* Click Create Cluster. This cluster name will be used in your MONGO_URI environment variable.
+* Navigate to Database Access under the Security section on the left, in order to create our database user credentials.
+* Click on "Add New Database User", create a username and password.
+* Set the "Database User Privileges" to Read and Write to any database, and click "Add User".
+* Click on "Network Access" within the Security menu in order to whitelist our IP address and make sure that it has access to our database. Click "Add IP Address", select "Allow Access from Anywhere", click "Confirm".
+
+2. Create database:
+
+* From the cluster page click on collections button.
+* Click on Create Database, provide the database name and one initial collection name. 
+  - This name will be used in your MONGO_URI and MONGO_DBNAME environment variables.
 
 
 # Credits: 
