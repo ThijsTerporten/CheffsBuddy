@@ -242,7 +242,12 @@ This was fixed by swapping around some classes on the respective column from the
 While working on this project I was trying to implement a liking system to excite users to create good recipes so they would get upvoted.
 However I realised to late in development that I needed to add another data-attribute to the user collection. Which is in place as of now for new registering users.
 
+### Editing recipes:
 
+When editing a recipe I would notice that clicking on submit and viewing the recipe afterwards would return a nested array as data. 
+After doing some research I realised that when using splitlines() when submitting data from a textarea and then letting it render in edit recipes it would return the array.
+After trying many things I decided to remove the `textarea's` for ingredients and instructions and replace them with `input` fields.
+After writing some jQuery code to increment the increment the `input` fields or remove them everything worked as expected.
 
 # Deployment:
 
