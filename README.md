@@ -24,14 +24,31 @@ The project has been deployed on Heroku [here](https://cheffs-buddy.herokuapp.co
 
 ## Owners goals:
 
+### As owner of this app I would like:
+
+- to provide users with an intuitive experience while browsing the app.
+- to allow users to register to the application.
+- to allow users to edit their own recipes.
+- to provide an incentive to create good recipes.
 
 
 ## User Stories: 
 
-- 
-- 
-- 
-- 
+### As a new/unregistered user I would like to:
+
+- Be able to explore the recipes on the site.
+- Be able to view a full description of the recipe.
+- Navigate the app intuitively. 
+- Easily understand what this website is about.
+- Search for recipes based on products used.
+
+### As a registered user I would like to:
+
+- Be able to login easily
+- Be able to save my favorite recipes.
+- Be able to create a recipe.
+- Be able to like and unlike recipes.
+- Sort recipes by category
 
 ## Structure: 
 
