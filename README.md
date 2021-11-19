@@ -90,18 +90,22 @@ Data is storder in 3 different ways:
 
 ## Surface: 
 
-
-
-
 ### Fonts: 
 
+ The main font used in the project is Playfair Display with a fallback of serif.
 
 ### Colors:
 
+The main colors used were black: #000500 and white: #FFFBFF
+This decision was made to keep everything nice and clean with images adding in more color throughout the page.
 
 ### Images:
 
-All images are taken from: 
+All images are taken from either:
+
+- Unsplash:
+- Pexels:
+- The logo used was taken from Freepik: 
 
 
 # Features: 
