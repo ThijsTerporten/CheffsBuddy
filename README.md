@@ -121,7 +121,7 @@ All images are taken from either:
 - A user is able to see a full description of the recipe.
 - A user is able to see all recipes they created on their profile page under my recipes.
 - A user is able to search for recipes based on the ingredients used or recipe name.
-
+- Submit and cancel buttons for the forms.
 
 ## Future Features: 
 
@@ -129,6 +129,8 @@ All images are taken from either:
 - A user is able to comment on recipes created by other people.
 - A user is able to have a clear overview of recipes in tabs of each category.
 - Pagination to be added so the screen doesn't get too long when a lot of recipes are in the database.
+- Users can upload images from their computer or phone.
+- Admin functionality.
 
 # Technologies used:
 
@@ -143,9 +145,11 @@ All images are taken from either:
 
 - JQuery: for easier and faster javascript and DOM manipulation.
 - Matrialize: used for creating a responsive design.
-- Flask: micro framework for Python code.
-- MongoDb: Used as the database where all data is stored.
-- Jinja: for displaying data on the screen.
+- Flask: used as Python web framwork.
+- PyMongo: used as Python distribution containing tools for working with MongoDb.
+- Flask-PyMongo: used as a bridge between Flask and PyMongo.
+- Werkzeug: used for password hasing and authentication. 
+- Jinja: for displaying backend data on the screen.
 
 ## Other programs used:
 
@@ -156,7 +160,7 @@ All images are taken from either:
 - [Git](https://en.wikipedia.org/wiki/Git): for version control
 - Google Chrome Dev Tools: for testing purposes. Console logging checking for breakpoints.
 - Prettier: to beautify code. 
-- FontAwesome: used for icons in the footer. [FontAwesome](https://fontawesome.com/)
+- FontAwesome: used for icons throughout the website [FontAwesome](https://fontawesome.com/)
 - Heroku to deploy the project
 
 ## Code validation:
@@ -167,6 +171,8 @@ All images are taken from either:
 > Warns user that backdrop-fliter isn't a property. Explained in bug section further.
 - [W3 HTML Validator](https://validator.w3.org/) to validate HTML code
 > All HTML-code passes the test. However multiple warnings were given for using the Jinja Templating Language.
+- [Python Syntax Checker](https://extendsclass.com/python-tester.html) to verify syntax used.
+> No issues were found when running code. However some warnings are given in the IDE.  
 
 # Testing: 
 
