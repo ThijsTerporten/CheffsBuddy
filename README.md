@@ -251,6 +251,68 @@ After writing some jQuery code to increment the increment the `input` fields or 
 
 # Deployment:
 
+The project was developed using Gitpod ass the IDE, committed to Git as a local repository, and pushed/stored in Github.
+It was then deployed on Heroku since Github pages cannot deploy a Python app.
+
+Deploying on Heroku:
+
+- Using the Heroku Command Line Interface
+- Connect to a github repository. (The easier method)
+
+1. ## Set up a new Heroku App:
+
+Navigate to Heroku.com, create a new account or login if you already have an account.   
+* On the dashboard page, click "Create New App" button.   
+* Give the app a name, the name must be unique with hypens between words. 
+* Set the region closest to you, and click "Create App".  
+
+2. ## Create a requirements.txt file:
+
+Heroku needs to know on what dependencies the project runs on to run succesfully, this way Heroku knows what language we're using.
+To create a requirements.txt file:
+* In the terminal type: pip3 --local > requirements.txt
+* git add requirements.txt
+* git commit -m "Add requirements.txt"
+* git push
+
+3. ## Create a procfile:
+
+This tells Heroku how to run our project:
+* In terminal type: echo web: python run.py > Procfile (mind the capital P)
+* git add, commit and push.
+
+4. ## Connect our app to heroku:
+
+* In Heroku app dashboard, navigate to deploy page, click on github.
+* Click on connect to Github.
+* Fill in the name of your repository and click on search.
+* After the correct repository is found click on connect.
+
+5. ## Set up environment Variables:
+
+* The environment variables for this project are hidden in a env.py file and ignored when pushing to github.
+* You need to manually tell Heroku what these variables are.
+* GO back to the dashboard and navigate to the settings page.
+* Click on reveal config vars and add the environment variables in key-value pairs:"
+ IP | 0.0.0.0
+
+  PORT | 5000
+
+  SECRET_KEY | `<Your secret_key>`
+
+  MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority`
+
+  MONGO_DBNAME | `<database_name>`
+
+6.  ## Enable automatic deployment:
+
+* On "Automatic Deploys" section, from our master/main branch click on "Enable Automatic Deployment".
+* On "Manual deploy" section, from our master/main click on "Deploy Branch".
+* Heroku will now receive the code from Github and start building the app using our required packages. Once it's done, you'll see a notification "Your app was successfully deployed."  The deployed version can now be viewed by selecting View App.
+
+## To use this project follow the following steps:
+
+
 
 
 # Credits: 
