@@ -368,9 +368,7 @@ This tells Heroku how to run our project:
 * Install all dependencies listed from the requirements.txt file.
   - Type in terminal: pip3 install -r requirements.txt  
 
-
-
-
+5. Go to deployment on heroku and fill in your variables, you no longer need to create a requirements.txt file and Procfile.
 
 # Credits: 
 
