@@ -7,7 +7,7 @@ The project has been deployed on Heroku [here](https://cheffs-buddy.herokuapp.co
 
 ## Showcase 
 
-![showcase-screenshot]()
+![showcase-screenshot](static/images/Ms3Mockup.png)
 
 ## navigation
 
