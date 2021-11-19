@@ -27,3 +27,14 @@ nav {
 .row {
     margin-bottom: 5px;
 }
+
+h1 {
+    font-weight: 800;
+}
+
+p,
+ul,
+li {
+    font-weight: 700;
+}
+
