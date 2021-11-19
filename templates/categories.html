@@ -32,20 +32,28 @@
                 <img src="../static/images/logo.png" alt="">
                 {% endif %}
                 <h3 class="">{{ recipe.recipe_name.capitalize() }}</h3>
-                <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}">Click here for the full recipe</a>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-heart"></i></a>
             </div>
             <div class="card-content">
+                <div class="row">
+                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}">Click here for the full recipe</a>
+                    <a class="btn halfway-fab waves-effect waves-light red"><i class="fas fa-heart"></i></a>
+                </div>
                 <p class="card-title">{{ recipe.category_name }}</p>
-                <span
-                    class="activator grey-text text-darken-4 btn halfway-fab waves-effect waves-light blue right tooltipped"
+                <span class="activator grey-text text-darken-4 btn waves-effect waves-light blue right tooltipped"
                     data-position="right" data-tooltip="Click me for a summary of ingredients!">
                     <i class="fas fa-arrow-up center"></i></span>
             </div>
             <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name.capitalize() }}<i
                         class="far fa-times-circle right"></i></span>
-                <p class="flow-text">{{ recipe.description }}</p>
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                    <li>
+                        {{- ingredient -}} {{ ingredient[1:] }}
+                    </li>
+                    {% endfor %}
+                </ul>
+
             </div>
             <div class="row">
                 {% if session.user|lower == recipe.created_by|lower %}
