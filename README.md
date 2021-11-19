@@ -166,7 +166,7 @@ All images are taken from either:
 ## Code validation:
 
 - [JShint](https://jshint.com/) to validate JavaScript code
-> No major errors found in javaScript code.
+> No major errors found in javaScript code. Warnings given for using jQuery
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code
 > Warns user that backdrop-fliter isn't a property. Explained in bug section further.
 - [W3 HTML Validator](https://validator.w3.org/) to validate HTML code
@@ -176,7 +176,12 @@ All images are taken from either:
 
 # Testing: 
 
-
+Most testing was done during development:
+- Whenever a function was written in app.py I would check that everything would display on the screen as it was intended.
+- Whenever data would be send to the database I would check in mongoDb whether it was stored in the correct way.
+- When writing Jinja template language I would check my output in the browser.
+- Using chrome devtools responsiveness off all elements implemented with materialize would be checked.
+> There is an issue when the screen is between 994 and 1800px wide when the Name of the recipe is too long that the full recipe link dissapears.(solved)
 
 ## User Stories Testing:
 
