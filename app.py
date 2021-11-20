@@ -227,13 +227,6 @@ def delete_recipe(recipe_id):
             return redirect(url_for("categories.html"))
 
 
-@app.route("/like_recipe/<recipe_id>")
-def like_recipe():
-    """
-    Function for liking a recipe
-    """
-
-
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
