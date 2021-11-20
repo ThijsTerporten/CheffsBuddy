@@ -372,12 +372,26 @@ This tells Heroku how to run our project:
 
 # Credits: 
 
+## Code:
+
+1. The code in this project mainly comes from Code Institute's Task Manager project and used as a main reference while creating this project
+in setting up a database to writing Python with Flask and the Jinja Template language.
+
+2. While coding and something wouldn't work as I intended I used this project from one of my peers as a reference [repository](https://github.com/dissyulina/cookle-cookbook).
+  - This is where I found the idea for the edit recipes page.
+
+3. Styling was mostly done using Materialize classes with some custom CSS from myself, however I found it quite difficult to expand upon Materialize with custom CSS.
+
+
 ## Content and Media:
 
-
+* Images were taken from [Unsplash](https://unsplash.com/),[Pexels](https://www.pexels.com/) and [FreePik](https://www.freepik.com/)
 
 ## Acknowledgments:
 
+I would like to thank my mentor for Antonija Simic for her support during this project she helped guide me in the right 
+direction and helped me focus.
+I would also like to thank my girlfriend for listening to me whine when my code wouldn't work as intended.
 
 
 **This project was created for educational purposes only, credit for all images goes to their owners**
